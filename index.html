@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.js">
+</head>
+<body>
+    <!--this is header-->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./image/Logo.svg">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="search">
+                <img src="./image/search.svg.svg">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button type="submit" class="search-button">Search</button>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>  
+        </nav>
+    </header>
+     <!--header ended-->
+      <!--this is home-->
+      <div class="homepage">
+        <div class="left-side">
+            <h1>Welcome to FoodDelivery</h1>
+            <p>Welcome to Culinary Delights, your go-to source for delicious recipes and food inspiration. Whether you're a seasoned chef or a home cook, our diverse recipes will spark your culinary creativity. Explore new flavors, join our vibrant community, and make every meal memorable with Culinary Delights!</p>
+            <a href="#" class="order-now-button">Order Now</a>
+        </div>
+        <div class="right-side">
+            <img src="./image/burger1.avif" alt="Delicious Food">
+        </div>
+    </div>
+     <!--home ended-->
+     <!--address-->
+     <section>
+        <div class="address-bar">
+            <div class="bar-item">
+                <img src="./image/time-icon.png.svg" alt="Time Icon" class="icon">
+                <span>24hours</span>
+            </div>
+            <div class="bar-item">
+                <img src="./image/location-icon.png.svg" alt="Location Icon" class="icon">
+                <span>Tejgaon,Dhaka<br> Bangladesh</span>
+            </div>
+            <div class="bar-item">
+                <img src="./image/call-icon.png.svg" alt="Call Icon" class="icon">
+                <span>+1234567890</span>
+            </div>
+        </div>
+     </section>
+     <!--address end-->
+       <!-- menu started -->
+       <div class="menu-container">
+        <h1>Our Menu</h1>
+        <ul class="menu" id="menu">
+            <li class="menu-item"><img src="./image/Pizza.png"></li>
+            <li class="menu-item"><img src="./image/Green Beans.png"></li>
+            <li class="menu-item"><img src="./image/Green Salad.png"></li>
+            <li class="menu-item"><img src="./image/Gyro Sandwhic.png"></li>
+            <li class="menu-item"><img src="./image/Chicken Pot Pie.png"></li>
+            <li class="menu-item"><img src="./image/Enchilade.png"></li>
+            <li class="menu-item hidden"><img src="./image/Gyro Sandwhic.png"></li>
+            <li class="menu-item hidden">Food Item 8</li>
+            <li class="menu-item hidden">Food Item 9</li>
+            <li class="menu-item hidden">Food Item 10</li>
+            <li class="menu-item hidden">Food Item 11</li>
+            <li class="menu-item hidden">Food Item 12</li>
+        </ul>
+        <button id="toggleButton">See More</button>
+    </div>
+
+    <script src="style.js"></script>
+       <!-- menu ended -->
+       <!-- service start -->
+    <section id="services" >
+       <div class="services"> <h1>Services</h1>
+        <p>Why Choose Our Favorite Food</p>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🍽️</div>
+                <h2>Quality Food</h2>
+                <p>Experience the best quality food made with the finest ingredients.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🥗</div>
+                <h2>Healthy Food</h2>
+                <p>Enjoy delicious meals that are healthy and nutritious.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h2>Fast Delivery</h2>
+                <p>Get your food delivered to your doorstep quickly and efficiently.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- service end -->
+    <!-- Testimonial start -->
+    <section class="testimonial">
+        <h1>Testimonial</h1>
+        <p>Our Happy Client Says</p>
+        <div class="testimonial-container">
+            <div class="left-section">
+                <img src="./image/burger1.avif" alt="Delicious Food">
+            </div>
+            <div class="right-section">
+                <div class="review">
+                    <p>"The food here is amazing! I've never had such a delightful dining experience. The flavors are just perfect!"</p>
+                    <h3>- Sumaiya Khan</h3>
+                </div>
+                <div class="swap-button">
+                    <button onclick="swapReview()">Next Review</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let reviews = [
+            {
+                text: "The food here is amazing! I've never had such a delightful dining experience. The flavors are just perfect!",
+                author: "- Sumaiya Khan"
+            },
+            {
+                text: "Absolutely loved the healthy options available. It was fresh and delicious. Will definitely come back for more!",
+                author: "- Nurul Alam Khan"
+            }
+        ];
+        
+        let currentReview = 0;
+
+        function swapReview() {
+            currentReview = (currentReview + 1) % reviews.length;
+            document.querySelector(".review p").textContent = reviews[currentReview].text;
+            document.querySelector(".review h3").textContent = reviews[currentReview].author;
+        }
+    </script>
+
+    <!-- Testimonial end -->
+    <!-- Subscribe start -->
+    <section class="subscribe">
+        <div class="left-side">
+            <h1>Subscribe To Our Newsletter</h1>
+            <p>Stay updated with the latest news and exclusive offers from our restaurant. Your support helps us to serve you better!</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="right-side">
+            <img src="./image/fastburger.png" alt="Delicious Food">
+        </div>
+    </section>
+
+    <!-- Subscribe end -->
+     <!-- contact start -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+    <!-- contact end -->
+     <!-- footer start -->
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Welcome to our food website! We offer the best culinary delights made with love and the finest ingredients. Join us for an unforgettable dining experience.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@foodwebsite.com</p>
+                <p>Phone: +123-456-7890</p>
+                <p>Address: 123 Food Street, Flavor Town, USA</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="./image/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="./image/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="./image/pinterest.svg" alt="pinterest"></a>
+                    <a href="#"><img src="./image/linkedIn.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Food Website. All rights reserved.</p>
+        </div>
+    </footer>
+        
+    <!--footer end-->
+    <script src="style.js"></script>
+</body>
+</html>
